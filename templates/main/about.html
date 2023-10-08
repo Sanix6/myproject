@@ -1,0 +1,27 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block title %} Виньетка группы {% endblock %}
+{% block content %}
+<div class="boot">
+    <h1>Bootcamp20</h1>
+</div>
+
+<div class="about" style="display: flex;">
+    {% for i in data %}
+    <div class="card8">
+          <img src="{{ i.title.url }}" alt="" width="170" height="162">
+        <b></b>
+        <div class="content8">
+            <p class="title8">{{ i.author }}<br><span> Jr Developer</span></p>
+        </div>
+    </div>
+    {% if forloop.counter|divisibleby:4 and not forloop.last %}
+</div>
+<div class="about" style="display: flex;">
+    {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}
+
+

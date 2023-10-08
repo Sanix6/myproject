@@ -1,0 +1,17 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block title %} Главная страница {% endblock %}
+{% block content %}
+<div class="features">
+    <h1> Главная страница </h1>
+    {% for i in data %}
+    <div class="row">
+        <div class="beck">
+            <h4>{{ i.name.url }}</h4>
+            <p>{{ i.main }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "main/layout.html"%}
+{% load static %}
+
+{% block title %} Ментор группы {% endblock %}
+{% block content %}
+<div class="Mentor">
+    <h1> Ментор </h1>
+</div>
+
+<div class="ment" style="display: flex;">
+    {% for i in data %}
+    <div class="card9">
+          <img src="{{ i.mentor.url }}" alt="" width="210" height="344">
+        <b></b>
+        <div class="content9">
+            <p class="title9">{{ i.image }}<br><span>Mentor</span></p>
+        </div>
+    </div>
+    {% if forloop.counter|divisibleby:4 and not forloop.last %}
+</div>
+<div class="about" style="display: flex;">
+    {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}
